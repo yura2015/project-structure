@@ -129,8 +129,6 @@ export default class SortableTable {
     const data = await fetchJson(this.url); // n кол-во времени
 
     this.element.classList.remove('sortable-table_loading');
-//    console.log(this.url);
-//    console.log(data);
     return data;
   }
 

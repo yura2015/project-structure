@@ -18,7 +18,7 @@ export default class Page {
     this.render();
   }
 
-  async onPrice(from, to) {
+  onPrice(from, to) {
         this.from = from;
         this.to = to;
         this.onProduct();
@@ -51,8 +51,8 @@ export default class Page {
   }
 
   initComponents() {
-        let now = new Date(); 
-        let from = new Date(); 
+        const now = new Date(); 
+        const from = new Date(); 
         const to = new Date( now.setMonth( now.getMonth() - 1 ) );
         
         const doubleSlider = new DoubleSlider( { 
@@ -119,7 +119,7 @@ export default class Page {
 
    initEventListener() {
         const elems = this.element.querySelectorAll(".form-control");   //"form-control"
-        for(let elem of elems) {
+        for(const elem of elems) {
              if (elem.dataset.elem === "filterName") {
                 elem.addEventListener('input', this.onProduct);
              } else if (elem.dataset.elem === "filterStatus") {
@@ -235,7 +235,7 @@ export class SortableTableProducts extends SortableTable {
             }
          }
 
-        let arrSlider = arrSel.filter(item => 
+        const arrSlider = arrSel.filter(item => 
         item.quantity > from && item.quantity < to 
         );
         this.subElements.body.innerHTML = this.getTableRows(arrSlider);

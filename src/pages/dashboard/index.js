@@ -22,8 +22,8 @@ export default class Page {
     }
 
    initComponents() {
-        let now = new Date(); 
-        let to = new Date(); 
+        const now = new Date(); 
+        const to = new Date(); 
         const from = new Date( now.setMonth( now.getMonth() - 1 ) );
         const rangePicker = new RangePicker( {from, to } );
 
@@ -129,7 +129,7 @@ export default class Page {
       // NOTE: удаляем обработчики событий, если они есть
       destroy() {
         this.remove();
-        for(let component in this.components) {
+        for(const component in this.components) {
             this.components[component].destroy();
         }
         this.element = null;

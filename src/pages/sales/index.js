@@ -29,8 +29,8 @@ export default class Page {
     }
 
    initComponents() {
-        let now = new Date(); 
-        let from = new Date(); 
+        const now = new Date(); 
+        const from = new Date(); 
         const to = new Date( now.setMonth( now.getMonth() - 1 ) );
         const rangePicker = new RangePicker( {from, to } );
 

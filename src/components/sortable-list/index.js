@@ -80,7 +80,6 @@ export default class SortableList {
     if (element) {
       if (event.target.closest('[data-grab-handle]')) {
         event.preventDefault();
-        console.log(`dragStart: + ${element.innerHTML}`);
         this.dragStart(element, event);
       }
 
@@ -140,7 +139,6 @@ export default class SortableList {
   moveDraggingAt(clientX, clientY) {
     this.draggingElem.style.left = `${clientX - this.pointerShift.x}px`;
     this.draggingElem.style.top = `${clientY - this.pointerShift.y}px`;
-     console.log(`this.draggingElem: + ${this.draggingElem.style.x}`);
   }
 
   scrollIfCloseToWindowEdge(clientY) {

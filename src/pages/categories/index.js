@@ -1,4 +1,4 @@
-
+﻿
 import Categories from "../../components/categories/index.js";
 import fetchJson from "../../utils/fetch-json.js"; 
 
@@ -9,10 +9,6 @@ export default class Page {
     element;
     subElements = {};
     components = {};
-
-    constructor() {
-
-    }
 
     initComponents() {
 

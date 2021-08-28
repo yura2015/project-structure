@@ -15,12 +15,12 @@ class Tooltip {
     }
 
     handlerOver = (event) => {
-        let element; 
-        if (event.target.dataset.tooltip) {
-            element = event.target
-        } else {
-            element = event.target.closest('data-tooltip');
-        }
+        let element = event.target.closest('data-tooltip'); 
+//        if (event.target.dataset.tooltip) {
+//            element = event.target
+//        } else {
+//            element = event.target.closest('data-tooltip');
+//        }
         
         if (element) {
             this.render(element.dataset.tooltip);
@@ -47,8 +47,8 @@ class Tooltip {
      render(html) {
           const hint = document.createElement('div'); // (*)
           hint.innerHTML = `<div> ${html} </div>`;
-          const element = hint;  //hint.firstElementChild;
-          this.element = hint;  //element;
+          const element = hint;  
+          this.element = hint;  
 
           this.element.classList.add('tooltip');
           document.body.append(this.element);

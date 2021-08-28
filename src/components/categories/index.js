@@ -1,7 +1,7 @@
 
 import SortableList from "./../sortable-list/index.js";
 import fetchJson from "./../../utils/fetch-json.js";  //"./fetch-json.js";   ///
-const BACKEND_URL = `${process.env.BACKEND_URL}`; 
+const BACKEND_URL = process.env.BACKEND_URL; 
 
 export default class Categories {
   element;
@@ -17,7 +17,7 @@ export default class Categories {
 
         const dragging = event.target.closest('[data-grab-handle]');
         if(dragging) {
-            let event = new Event('pointerdown'); 
+            const event = new CustomEvent('pointerdown'); 
             dragging.dispatchEvent(event);
         }
   };
@@ -44,7 +44,7 @@ export default class Categories {
        // this.subElements.header.removeEventListener('pointerdown', this.handler);
   }
 
-  async render() {
+  render() {
 
         const wrapper = document.createElement('div');
 
@@ -54,7 +54,7 @@ export default class Categories {
 
         this.element = element;
 
-       //this.subElements = this.getSubElements(element);
+        this.subElements = this.getSubElements(element);
 
   }
 
